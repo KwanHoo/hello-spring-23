@@ -3,14 +3,18 @@ package hello.hellospring23.service;
 import hello.hellospring23.domain.Member;
 import hello.hellospring23.repository.MemberRepository;
 import hello.hellospring23.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
     private final MemberRepository memberRepository;
 
     // DI : dependency injection => MemberService를 외부에서
+    @Autowired
     public MemberService(MemoryMemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
